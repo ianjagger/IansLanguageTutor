@@ -1,0 +1,5 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+.DS_Store
+/IansLanguageTutor/src/main/java/com/psychastria/ianslanguagetutor/Constants.java

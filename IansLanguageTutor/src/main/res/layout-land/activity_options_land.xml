@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".OptionsActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/choose_lang"
+        android:id="@+id/chooseLang"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="English"
+        android:id="@+id/visibleLangView"
+        android:layout_below="@+id/chooseLang"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="@dimen/navigation_button_values" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Language"
+        android:id="@+id/hiddenLangView"
+        android:layout_below="@+id/swapLanguagesButton"
+        android:layout_alignLeft="@+id/visibleLangView"
+        android:layout_centerInParent="true" />
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/hiddenLangView"
+        android:id="@+id/radioGroup">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continue"
+            android:id="@+id/continueRadioButton"
+            android:layout_centerVertical="true"
+            android:layout_alignLeft="@+id/lessonRadioButton"
+            android:clickable="true"
+            android:enabled="true"
+            android:checked="true"
+            android:onClick="continueRadioButtonClick" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lesson"
+            android:id="@+id/lessonRadioButton"
+            android:layout_below="@+id/hiddenLangView"
+            android:layout_alignLeft="@+id/hiddenLangView"
+            android:enabled="true"
+            android:clickable="true"
+            android:onClick="lessonRadioButtonClick" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/lessonSpinner"
+                android:layout_below="@+id/lessonRadioButton"
+                android:layout_toRightOf="@+id/hiddenLangView"
+                android:spinnerMode="dialog"
+                android:layout_gravity="left|center_vertical"
+                android:visibility="gone" />
+
+    </RadioGroup>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/previousOptionsButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/arrow_back_4_icon"
+        android:onClick="doOptionsPreviousClick" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/swapLanguagesButton"
+        android:clickable="true"
+        android:maxWidth="@dimen/flag_icon_values"
+        android:maxHeight="@dimen/flag_icon_values"
+        android:src="@drawable/arrow_updown_icon"
+        android:onClick="doOptionsSwapClick"
+        android:layout_below="@+id/visibleLangView"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/nextOptionsButton"
+        android:src="@drawable/arrow_next_4_icon"
+        android:onClick="doOptionsNextClick"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>
