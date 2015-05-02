@@ -20,7 +20,14 @@ android {
         minSdkVersion 7
         targetSdkVersion 18
     }
+
+    lintOptions {
+        abortOnError false
+    }
+
 }
+
+
 
 dependencies {
     compile files('libs/commons-net-3.3.jar')
