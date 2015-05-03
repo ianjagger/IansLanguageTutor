@@ -1,12 +1,14 @@
 package com.psychastria.ianslanguagetutor;
 
 
+import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -44,7 +46,7 @@ public class UpgradeActivity extends Activity {
 
     private Spinner langSpinner;
     public static final String PREFS_NAME = "MyOptionsFile";
-    ArrayList<String> languages = new ArrayList<String>();
+    final ArrayList<String> languages = new ArrayList<String>();
     Activity dg;
 
     private String LANGFILE = "";
@@ -162,6 +164,7 @@ public class UpgradeActivity extends Activity {
             dialog.show();
         }
 
+        @TargetApi(Build.VERSION_CODES.FROYO)
         @Override
         protected List<String> doInBackground(String... params)
         {
@@ -308,7 +311,7 @@ public class UpgradeActivity extends Activity {
                     if (j==0)
                         header = line;
 
-                    if (line.indexOf(" filename=\"") >= 0)
+                    if (line.contains(" filename=\""))
                     {
                         String fname = line.substring(line.indexOf(" filename=\""), line.indexOf("\" date=\""));
 
@@ -356,6 +359,7 @@ public class UpgradeActivity extends Activity {
 
         }
 
+        @TargetApi(Build.VERSION_CODES.FROYO)
         public  void generateIndexFile (String filename)
         {
             try
@@ -448,6 +452,7 @@ public class UpgradeActivity extends Activity {
 
         }
 
+        @TargetApi(Build.VERSION_CODES.FROYO)
         @Override
         protected List<String> doInBackground(String... params)
         {

@@ -10,5 +10,11 @@
 
     <string name="title_activity_upgrade">UpgradeActivity</string>
     <string name="title_activity_language_options">LanguageOptions</string>
-
+    <string name="loading">Loading....</string>
+    <string name="lesson">Lesson....</string>
+    <string name="english">English</string>
+    <string name="download">Download</string>
+    <string name="language">Language</string>
+    <string name="strcontinue">Continue</string>
+    <string name="mediumText">Medium Text</string>
 </resources>

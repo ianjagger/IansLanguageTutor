@@ -24,10 +24,8 @@ public class Utilities {
 
         int count = inputArray.length;
 
-        for (int i=0; i< count; i++)
-        {
-            if (inputArray[i].equals(value))
-            {
+        for (String anInputArray : inputArray) {
+            if (anInputArray.equals(value)) {
                 found = true;
             }
         }

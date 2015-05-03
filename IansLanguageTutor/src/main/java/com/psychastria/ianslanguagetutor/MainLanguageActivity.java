@@ -1,9 +1,11 @@
 package com.psychastria.ianslanguagetutor;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.app.Activity;
 import android.util.Log;
@@ -42,8 +44,8 @@ public class MainLanguageActivity extends Activity {
     private ImageView visibleImage;
     boolean nextlesson = false;
 
-    List<String> lessons =  new ArrayList<String>();
-    List<List<String>> vocab = new ArrayList<List<String>>();
+    final List<String> lessons =  new ArrayList<String>();
+    final List<List<String>> vocab = new ArrayList<List<String>>();
     private Activity dg = null;
 
     @Override
@@ -266,6 +268,7 @@ public class MainLanguageActivity extends Activity {
         }
 
 
+        @TargetApi(Build.VERSION_CODES.FROYO)
         @Override
         protected List<String> doInBackground(String... params)
         {
@@ -311,7 +314,7 @@ public class MainLanguageActivity extends Activity {
 
         protected void onPostExecute(List<String> jobList)
         {
-            if (nextlesson == false)
+            if (!nextlesson)
             {
                 lessonrowno = vocab.size() - 1;
             }
@@ -326,6 +329,7 @@ public class MainLanguageActivity extends Activity {
 
         }
 
+        @TargetApi(Build.VERSION_CODES.FROYO)
         @Override
         protected List<String> doInBackground(String... params)
         {

@@ -16,13 +16,15 @@
         android:text="@string/choose_lang"
         android:id="@+id/chooseLang"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="English"
+        android:text="@string/english"
         android:id="@+id/visibleLangView"
         android:layout_below="@+id/chooseLang"
         android:layout_centerHorizontal="true"
@@ -32,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Language"
+        android:text="@string/language"
         android:id="@+id/hiddenLangView"
         android:layout_below="@+id/swapLanguagesButton"
         android:layout_alignLeft="@+id/visibleLangView"
@@ -43,13 +45,14 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/hiddenLangView"
         android:id="@+id/radioGroup">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Continue"
+            android:text="@string/strcontinue"
             android:id="@+id/continueRadioButton"
             android:layout_centerVertical="true"
             android:layout_alignLeft="@+id/lessonRadioButton"
@@ -62,7 +65,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lesson"
+            android:text="@string/lesson"
             android:id="@+id/lessonRadioButton"
             android:layout_below="@+id/hiddenLangView"
             android:layout_alignLeft="@+id/hiddenLangView"
@@ -77,7 +80,7 @@
                 android:layout_below="@+id/lessonRadioButton"
                 android:layout_toRightOf="@+id/hiddenLangView"
                 android:spinnerMode="dialog"
-                android:layout_gravity="left|center_vertical"
+                android:layout_gravity="start|center_vertical"
                 android:visibility="gone" />
 
     </RadioGroup>
@@ -88,6 +91,7 @@
         android:id="@+id/previousOptionsButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:src="@drawable/arrow_back_4_icon"
         android:onClick="doOptionsPreviousClick" />
 

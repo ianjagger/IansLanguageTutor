@@ -1,9 +1,11 @@
 package com.psychastria.ianslanguagetutor;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -38,7 +40,7 @@ public class LanguageOptionsActivity extends Activity {
     private TextView hiddenLanguage;
     private TextView displayLanguage;
 
-    ArrayList<String> lessons =  new ArrayList<String>();
+    final ArrayList<String> lessons =  new ArrayList<String>();
     private Activity dg = null;
 
     @Override
@@ -215,6 +217,7 @@ public class LanguageOptionsActivity extends Activity {
             nextOptionsButton.setVisibility(View.VISIBLE);
         }
 
+        @TargetApi(Build.VERSION_CODES.FROYO)
         @Override
         protected List<String> doInBackground(String... params)
         {

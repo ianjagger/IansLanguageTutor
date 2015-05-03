@@ -14,6 +14,7 @@
         android:id="@+id/previousMainButton"
         android:layout_alignParentBottom="false"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:src="@drawable/arrow_back_4_icon"
         android:onClick="doMainBackClick" />
 
@@ -22,8 +23,9 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:id="@+id/lessonView"
-        android:text="Lesson...."
+        android:text="@string/lesson"
         android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/previousMainButton" />
 
@@ -33,6 +35,7 @@
         android:id="@+id/previousPhraseButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:src="@drawable/arrow_back_4_icon"
         android:onClick="doPreviousPhraseClick" />
 
@@ -43,13 +46,14 @@
         android:src="@drawable/arrow_next_4_icon"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:onClick="doNextPhraseClick" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Loading...."
+        android:text="@string/loading"
         android:id="@+id/mainVisibleTextView"
         android:layout_below="@+id/lessonView"
         android:layout_centerHorizontal="true"
@@ -68,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
+        android:text="@string/mediumText"
         android:id="@+id/mainHiddenTextView"
         android:visibility="gone"
         android:layout_above="@+id/nextPhraseButton"
